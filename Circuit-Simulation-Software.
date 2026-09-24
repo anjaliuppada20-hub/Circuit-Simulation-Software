@@ -1,0 +1,56 @@
+# Circuit-Simulation-Software
+Simulates electrical circuits to analyze voltage, current, power, and circuit behavior.
+# Simple Circuit Simulation Software
+# Calculates voltage, current and power using Ohm's Law
+
+print("===== CIRCUIT SIMULATION SOFTWARE =====")
+
+while True:
+    print("\n1. Calculate Current")
+    print("2. Calculate Voltage")
+    print("3. Calculate Resistance")
+    print("4. Calculate Power")
+    print("5. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        voltage = float(input("Enter Voltage (V): "))
+        resistance = float(input("Enter Resistance (Ohm): "))
+
+        if resistance != 0:
+            current = voltage / resistance
+            print(f"Current = {current:.2f} A")
+        else:
+            print("Resistance cannot be zero.")
+
+    elif choice == "2":
+        current = float(input("Enter Current (A): "))
+        resistance = float(input("Enter Resistance (Ohm): "))
+
+        voltage = current * resistance
+        print(f"Voltage = {voltage:.2f} V")
+
+    elif choice == "3":
+        voltage = float(input("Enter Voltage (V): "))
+        current = float(input("Enter Current (A): "))
+
+        if current != 0:
+            resistance = voltage / current
+            print(f"Resistance = {resistance:.2f} Ohm")
+        else:
+            print("Current cannot be zero.")
+
+    elif choice == "4":
+        voltage = float(input("Enter Voltage (V): "))
+        current = float(input("Enter Current (A): "))
+
+        power = voltage * current
+        print(f"Power = {power:.2f} W")
+
+    elif choice == "5":
+        print("Simulation closed.")
+        break
+
+    else:
+        print("Invalid choice!")
